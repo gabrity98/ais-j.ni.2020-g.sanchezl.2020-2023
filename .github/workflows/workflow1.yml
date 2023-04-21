@@ -15,8 +15,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: test unitarios
-        run: |
-          ./gradlew unitary
+        run: mvn test -Dtest=Unitary
       - name: test integracion
-        run: |
-          ./gradlew integration
+        run: mvn test -Dtest=Integration
