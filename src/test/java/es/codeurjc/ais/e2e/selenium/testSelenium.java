@@ -1,6 +1,7 @@
 package es.codeurjc.ais;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.List;
@@ -14,10 +15,19 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.web.server.LocalServerPort;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
+@SpringBootTest(
+		classes = Application.class,
+		webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+
 public class testSelenium {
+	@LocalServerPort
+	int port;
+	
 	private WebDriver driver;
 
 	@BeforeAll
@@ -39,7 +49,7 @@ public class testSelenium {
 	
 	@Test
 	public void testDrama() {
-		driver.get("http://localhost:8080/");
+		driver.get("http://localhost:"+this.port+"/");
 		
 		WebElement searchInput = driver.findElement(By.name("topic"));
 		searchInput.sendKeys("drama");
@@ -51,7 +61,7 @@ public class testSelenium {
 	
 	@Test
 	public void testEpicFantasy() {
-		driver.get("http://localhost:8080/");
+		driver.get("http://localhost:"+this.port+"/");
 		
 		WebElement searchInput = driver.findElement(By.name("topic"));
 		searchInput.sendKeys("epic fantasy");
@@ -71,7 +81,7 @@ public class testSelenium {
 	
 	@Test
 	public void testNoReview() {
-		driver.get("http://localhost:8080/");
+		driver.get("http://localhost:"+this.port+"/");
 		
 		WebElement searchInput = driver.findElement(By.name("topic"));
 		searchInput.sendKeys("epic fantasy");

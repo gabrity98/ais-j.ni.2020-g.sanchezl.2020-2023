@@ -23,7 +23,5 @@ jobs:
         run: mvn test -Dtest=testOpenLibraryService
       - name: test ApiRest
         run: mvn test -Dtest=RestTest
-      - name: test selenium 1
-        run: mvn test -Dtest=SeleniumTest
-      - name: test selenium 2
+      - name: test selenium
         run: mvn test -Dtest=testSelenium
