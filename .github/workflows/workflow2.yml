@@ -13,4 +13,17 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      - run: mvn test
+      - name: test unitario 1
+        run: mvn test -Dtest=ReviewServiceUnitaryTest
+      - name: test unitario 2
+        run: mvn test -Dtest=testBookService
+      - name: test integracion 1
+        run: mvn test -Dtest=OpenLibraryServiceIntegrationTest
+      - name: test integracion 2
+        run: mvn test -Dtest=testOpenLibraryService
+      - name: test ApiRest
+        run: mvn test -Dtest=RestTest
+      - name: test selenium 1
+        run: mvn test -Dtest=SeleniumTest
+      - name: test selenium 2
+        run: mvn test -Dtest=testSelenium
