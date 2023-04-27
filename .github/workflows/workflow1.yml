@@ -18,6 +18,6 @@ jobs:
           distribution: 'temurin'
           java-version: '17'
       - name: test unitarios
-        run: mvn test -Dtest=Unitary
+        run: mvn test -Dtest=ReviewServiceUnitaryTest
       - name: test integracion
         run: mvn test -Dtest=Integration
