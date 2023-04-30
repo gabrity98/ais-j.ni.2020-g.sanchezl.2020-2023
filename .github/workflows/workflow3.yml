@@ -28,7 +28,7 @@ jobs:
         run: mvn test -Dtest=testSelenium
       - name: Generate Docker image
         run: mvn spring-boot:build-image -DskipTests
-          -Dspring-boot.build-image.imageName=books-reviewer/items:v1
+          -Dspring-boot.build-image.imageName=books-reviewer
       - name: Generate tag
         run: echo "tag=$(dev- +'%Y%m%d.%H%M%S')"
         id: timestamp
@@ -36,6 +36,6 @@ jobs:
         run: docker login
          -u "${{ secrets.DOCKERHUB_USERNAME }}" -p "${{ secrets.DOCKERHUB_TOKEN }}"
       - name: Push image to DockerHub
-        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}/items:v1
+        run: docker push ${{ secrets.DOCKERHUB_USERNAME }}
 
       
