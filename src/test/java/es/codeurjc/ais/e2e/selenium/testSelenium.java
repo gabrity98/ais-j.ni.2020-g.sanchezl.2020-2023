@@ -40,7 +40,7 @@ public class testSelenium {
 	public void setUpDriver() {
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("--headless");
-		driver = new ChromeDriver();
+		driver = new ChromeDriver(options);
 	}
 	
 	@AfterEach
