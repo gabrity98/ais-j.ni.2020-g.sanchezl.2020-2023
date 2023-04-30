@@ -37,6 +37,8 @@ public class testSelenium {
 	
 	@BeforeEach
 	public void setUpDriver() {
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
 		driver = new ChromeDriver();
 	}
 	
