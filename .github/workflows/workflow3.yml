@@ -28,7 +28,7 @@ jobs:
         run: mvn test -Dtest=testSelenium
       - name: Generate Docker image
         run: mvn spring-boot:build-image -DskipTests
-          -Dspring-boot.build-image.imageName=books-reviewer
+          -Dspring-boot.build-image.imageName=books-reviewer/items:v1
       - name: Generate tag
         run: echo "tag=$(dev- +'%Y%m%d.%H%M%S')"
         id: timestamp
