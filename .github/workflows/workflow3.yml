@@ -1,3 +1,29 @@
 on:
   schedule: 
     - cron: '0 0 * * *'
+  push:
+    branches:
+      - develop
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - name: test unitario 1
+        run: mvn test -Dtest=ReviewServiceUnitaryTest
+      - name: test unitario 2
+        run: mvn test -Dtest=testBookService
+      - name: test integracion 1
+        run: mvn test -Dtest=OpenLibraryServiceIntegrationTest
+      - name: test integracion 2
+        run: mvn test -Dtest=testOpenLibraryService
+      - name: test ApiRest
+        run: mvn test -Dtest=RestTest
+      - name: test selenium
+        run: mvn test -Dtest=testSelenium
+      
