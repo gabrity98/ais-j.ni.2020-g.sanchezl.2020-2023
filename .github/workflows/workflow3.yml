@@ -30,7 +30,7 @@ jobs:
         run: mvn spring-boot:build-image -DskipTests
           -Dspring-boot.build-image.imageName=books-reviewer/items:v1
       - name: Generate tag
-        run: echo "tag=$(dev- +'%Y%m%d.%H%M%S')"
+        run: echo "tag=$(dev- +'%Y%m%d.%H%M%S')" >> $GITHUB_OUTPUT
         id: timestamp
       - name: Login to DockerHub
         run: docker login
