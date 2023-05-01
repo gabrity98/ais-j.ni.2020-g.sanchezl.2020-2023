@@ -31,7 +31,7 @@ jobs:
         id: timestamp
       - name: Generate Docker image
         run: mvn spring-boot:build-image -DskipTests
-          -Dspring-boot.build-image.imageName=books-reviewer/book-reviews:${{ steps.timestamp.outputs.tag }}
+          -Dspring-boot.build-image.imageName={{ secrets.DOCKERHUB_USERNAME }}/book-reviews/books-reviewer:${{ steps.timestamp.outputs.tag }}
       - name: Login to DockerHub
         run: docker login
          -u "${{ secrets.DOCKERHUB_USERNAME }}" -p "${{ secrets.DOCKERHUB_TOKEN }}"
