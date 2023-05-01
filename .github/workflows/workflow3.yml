@@ -5,7 +5,7 @@ on:
     branches:
       - develop
 jobs:
-  test:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -28,9 +28,6 @@ jobs:
         run: mvn test -Dtest=RestTest
       - name: test selenium
         run: mvn test -Dtest=testSelenium
-  publish:
-    runs-on: ubuntu-latest
-    steps:
       - name: Generate tag
         run: echo "tag=$('%Y%m%d.%H%M%S')" >> $GITHUB_OUTPUT
         id: timestamp
