@@ -1,9 +1,6 @@
 on:
   schedule: 
     - cron: '0 0 * * *'
-  push:
-    branches:
-      develop
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -16,18 +13,18 @@ jobs:
         with:
           distribution: 'temurin'
           java-version: '17'
-      #- name: test unitario 1
-      #  run: mvn test -Dtest=ReviewServiceUnitaryTest
-      #- name: test unitario 2
-      #  run: mvn test -Dtest=testBookService
-      #- name: test integracion 1
-      #  run: mvn test -Dtest=OpenLibraryServiceIntegrationTest
-      #- name: test integracion 2
-      #  run: mvn test -Dtest=testOpenLibraryService
-      #- name: test ApiRest
-      #  run: mvn test -Dtest=RestTest
-      #- name: test selenium
-      #  run: mvn test -Dtest=testSelenium
+      - name: test unitario 1
+        run: mvn test -Dtest=ReviewServiceUnitaryTest
+      - name: test unitario 2
+        run: mvn test -Dtest=testBookService
+      - name: test integracion 1
+        run: mvn test -Dtest=OpenLibraryServiceIntegrationTest
+      - name: test integracion 2
+        run: mvn test -Dtest=testOpenLibraryService
+      - name: test ApiRest
+        run: mvn test -Dtest=RestTest
+      - name: test selenium
+        run: mvn test -Dtest=testSelenium
       - name: Generate tag
         run: echo "tag=$(date +'%Y%m%d.%H%M%S')" >> $GITHUB_OUTPUT
         id: timestamp
