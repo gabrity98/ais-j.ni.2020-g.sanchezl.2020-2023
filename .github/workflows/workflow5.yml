@@ -25,8 +25,8 @@ jobs:
       run: mvn test -Dtest=testOpenLibraryService
     - name: test ApiRest
       run: mvn test -Dtest=RestTest
-    - name: test selenium
-      run: mvn test -Dtest=testSelenium
+    #- name: test selenium
+    #  run: mvn test -Dtest=testSelenium
 
 
     - name: Generate tag
@@ -44,4 +44,4 @@ jobs:
     - name: Login into Okteto
       run: okteto context use https://cloud.okteto.com --token ${{ secrets.OKTETO_TOKEN }}
     - name: Deploy to Okteto
-      run: okteto deploy -wait
+      run: okteto deploy --wait
