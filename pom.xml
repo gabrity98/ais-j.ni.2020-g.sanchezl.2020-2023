@@ -17,6 +17,7 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>17</java.version>
 		<selenium.version>4.8.3</selenium.version>
+		<dockerhub.user>gabrity98</dockerhub.user>
 	</properties>
 
 	<dependencies>
@@ -80,5 +81,20 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+	
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<image>
+						<name>${dockerhub.user}/${project.artifactId}:${project.version}</name>
+					</image>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
 	
 </project>
