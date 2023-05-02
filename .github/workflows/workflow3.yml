@@ -29,7 +29,7 @@ jobs:
       #- name: test selenium
       #  run: mvn test -Dtest=testSelenium
       - name: Generate tag
-        run: echo "tag=$('%Y%m%d.%H%M%S')" >> $GITHUB_OUTPUT
+        run: echo "tag=$(date + '%Y%m%d.%H%M%S')" >> $GITHUB_OUTPUT
         id: timestamp
       - name: Generate Docker image
         run: mvn spring-boot:build-image -DskipTests -Dspring-boot.build-image.imageName=${{ secrets.DOCKERHUB_USERNAME }}/books-reviewer:dev-${{steps.timestamp.outputs.tag}}
