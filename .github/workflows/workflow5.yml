@@ -2,9 +2,6 @@ on:
   push:
     branches:
       - production
-  pull_request:
-    branches:
-      - production
 jobs:
   test:
     runs-on: ubuntu-latest
