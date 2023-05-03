@@ -1,0 +1,5 @@
+services:
+  anuncios:
+    image: gabrity98/books-reviewer:0.2.0-SNAPSHOT
+    ports:
+      - 8080:8080
