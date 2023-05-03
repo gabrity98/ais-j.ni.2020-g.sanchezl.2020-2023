@@ -1,17 +1,18 @@
 # AIS-Practica-3-2023
 
-Autor(es): Michel Maes Bermejo y Francisco Gortázar Bellas
+Autor(es): Jiajie Ni y Gabriel Sánchez Losa
 
-[Repositorio (CAMBIAR ENLACE)](https://github.com/URJC-AIS/AIS-Practica-3-2023-template)
+[Repositorio](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023)
 
-[Aplicación Okteto (CAMBIAR ENLACE)](https://books-maes95.cloud.okteto.net/)
+[Aplicación Okteto](https://books-gabrity98.cloud.okteto.net/)
 
 ## Desarrollo con (GitFlow/TBD)
 
 Una vez creados los workflows y funcionando estos, pasamos a crear la nueva funcionalidad utilizando (Gitflow o TBD):
 
 ```
-$ git clone ...
+$ git clone git@github.com:gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023.git
+
 ```
 
 ....
