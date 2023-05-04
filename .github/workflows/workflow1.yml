@@ -2,7 +2,7 @@ name: workflow1
 on:
   push:
     branches:
-      - feature/*
+      - feature
   pull_request:
     branches:
       - develop
