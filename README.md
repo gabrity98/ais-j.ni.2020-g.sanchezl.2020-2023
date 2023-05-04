@@ -14,6 +14,3 @@ Una vez creados los workflows y funcionando estos, pasamos a crear la nueva func
 $ git clone git@github.com:gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023.git
 
 ```
-
-....
-
