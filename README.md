@@ -13,7 +13,7 @@ Una vez creados los workflows y funcionando estos, pasamos a crear la nueva func
 ```
 $ git clone git@github.com:gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023.git
 ```
-A continuación, cremos la rama develop partiendo de la rama máster y cambiamos de rama para trabajar en ella.
+A continuación, creamos la rama develop partiendo de la rama Master y cambiamos de rama para trabajar en ella.
 ```
 $ git checkout -b develop
 ```
