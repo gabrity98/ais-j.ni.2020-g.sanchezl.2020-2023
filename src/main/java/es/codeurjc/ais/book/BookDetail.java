@@ -20,6 +20,13 @@ public class BookDetail extends Book{
     }
 
     public void setDescription(String description) {
+	if (description.length() > 950) {
+                String aux = "";
+                for (int i=0; i<=950;i++) {
+                        aux+= description.charAt(i);
+                }
+                description = aux + "...";
+        }
         this.description = description;
     }
 
