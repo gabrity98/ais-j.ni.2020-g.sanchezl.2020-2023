@@ -1,5 +1,5 @@
 services:
   books:
-    image: gabrity98/books-reviewer:0.2.0
+    image: gabrity98/books-reviewer:0.2.0-SNAPSHOT
     ports:
       - 8080:8080
