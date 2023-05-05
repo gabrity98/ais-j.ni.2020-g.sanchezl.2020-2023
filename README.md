@@ -44,7 +44,7 @@ Tras hacer los cambios deseados, hacemos un commit para dejar registrada la nuev
 $ git add BookDetail.java
 $ git commit -m "feat: 950 characters description"
 ```
-Ahora, hacemos push para que se vean reflejados los cambios en el repositorio online, lo cual hará que se ejecute automáticamente el [Workflow 1](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4891208923)
+Ahora, hacemos push para que se vean reflejados los cambios en el repositorio online, lo cual hará que se ejecute automáticamente el [Workflow 1](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4894904229)
 ```
 $ git push origin feature
 ```
@@ -52,11 +52,11 @@ Ahora que hemos terminado la nueva funcionalidad, cambiamos a la rama *develop*.
 ```
 $ git checkout develop
 ```
-Y hacemos push para poder hacer pull-request desde el repositorio online, lo cual hace que se ejecute automáticamente el [Workflow 2](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4891306938).
+Y hacemos push para poder hacer pull-request desde el repositorio online, lo cual hace que se ejecute automáticamente el [Workflow 2](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4894916224).
 ```
 $ git push origin develop
 ```
-Ahora podemos hacer un [pull-request](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/pull/59) desde la rama *develop* para que se fusione con la rama *feature*. Esto ejecutará el [Workflow 1](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4891370430) y el [Workflow 2](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4891371902)
+Ahora podemos hacer un [pull-request](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/pull/61) desde la rama *develop* para que se fusione con la rama *feature*. Esto ejecutará el [Workflow 1](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4894949013) y el [Workflow 2](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4894950036)
 
 Posteriormente, hacemos pull desde el terminal para actualizar nuestro repositorio local y seguir trabajando.
 ```
@@ -73,7 +73,7 @@ $ nano pom.xml
 Modificamos la versión del pom eliminando el sufijo "-SNAPSHOT" de la versión de la aplicación.
 ```
 <groupId>es.codeurjc.ais</groupId>
-<artifactId>practica_3_testing</artifactId>
+<artifactId>j.ni.2020-g.sanchezl.2020</artifactId>
 <version>0.2.0</version>
 ```
 De la misma forma, debemos modificar docker-compose.yml para que refleje esta nueva versión.
@@ -93,7 +93,7 @@ $ git add pom.xml
 $ git add docker-compose.yml
 $ git commit -m "docs: removed -SNAPSHOT"
 ```
-Y hacemos push, lo cual ejecutará automáticamente el [Workflow 4](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4891425297).
+Y hacemos push, lo cual ejecutará automáticamente el [Workflow 4](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4894981544).
 ```
 $ git push origin release
 ```
@@ -107,7 +107,7 @@ $ nano pom.xml
 ```
 ```
 <groupId>es.codeurjc.ais</groupId>
-<artifactId>practica_3_testing</artifactId>
+<artifactId>j.ni.2020-g.sanchezl.2020</artifactId>
 <version>0.3.0-SNAPSHOT</version>
 ```
 Hacemos commit.
@@ -115,11 +115,11 @@ Hacemos commit.
 $ git add pom.xml
 $ git commit -m "docs: changed version to 0.3.0-SNAPSHOT"
 ```
-Y hacemos push, lo cual volverá a ejecutar el [Workflow 2](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4891448339).
+Y hacemos push, lo cual volverá a ejecutar el [Workflow 2](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4894992911).
 ```
 $ git push origin develop
 ```
-Por último, ya podemos hacer [pull request](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/pull/60) desde la rama Master.
-Este último push ejecutará automáticamente el [Workflow 5](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4891468806), publicará una [imagen en DockerHub](https://hub.docker.com/layers/gabrity98/books-reviewer/0.2.0/images/sha256:43699c3b75129031a7bfd9c7da2521c5aa58e92cb813baa227c81b956e42d229) y desplegará la aplicación en [Okteto](https://books-gabrity98.cloud.okteto.net/).
+Por último, ya podemos hacer [pull request](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/pull/62) desde la rama Master.
+Este último push ejecutará automáticamente el [Workflow 5](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4895008028), publicará una [imagen en DockerHub](https://hub.docker.com/layers/gabrity98/books-reviewer/0.2.0/images/sha256:f064b4f9b241d67fc9465124783973dcdeb8983b7c0afb81bfd6e027bca2b483) y desplegará la aplicación en [Okteto](https://books-gabrity98.cloud.okteto.net/).
 
 Para terminar, también contamos con un [Workflow 3](https://github.com/gabrity98/ais-j.ni.2020-g.sanchezl.2020-2023/actions/runs/4888826616) que se ejecuta automáticamente todas las noches a las 00:00 (horario UTC). Este workflow de Nightly ejecuta todos los tests en la rama *develop* y sube una [imagen a dockerhub](https://hub.docker.com/layers/gabrity98/books-reviewer/dev-20230505.010028/images/sha256:e89cb8fc8cad2806e0298fa5104d65e1badb33b11583fc78f6964991d4f2f743) con el tag "dev-*fecha*" 
